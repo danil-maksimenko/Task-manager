@@ -23,6 +23,8 @@ Aplikacja działa:
 | **Zadania (Board Items)** | • tworzenie / edycja / usuwanie<br>• status → _todo_ / _in-progress_ / _done_<br>• przypisywanie do członka<br>• przypięcie do cyklu |
 | **Cykle (Cycles)**        | • definiowanie zakresu dat<br>• edycja nazw i dat<br>• przenoszenie zadań między cyklami                                             |
 | **Członkowie (Members)**  | • dodawanie, edycja, usuwanie<br>• rola lub specjalizacja (tekstowa)                                                                 |
+| **Widok tablicy**         | • kolumny Kanban (drag-&-drop w planach)<br>• filtry po cyklu / osobie                                                               |
+| **Eksport**               | • lista zadań do CSV (road-mapa) — _wkrótce_                                                                                         |
 | **Desktop (Electron)**    | • uruchamia serwer Node w tle<br>• automatyczne otwarcie okna po starcie                                                             |
 
 ---
@@ -130,15 +132,9 @@ Browser / Electron ↔ Express Router ↔ Controller ↔ Service ↔ Mongoose �
 
 ---
 
+## 10 • Zrzuty ekranu / mock-ups
 
-## 9 • Zrzuty ekranu / mock-ups
-
-```
 ![img_1.png](images/img_1.png)
 ![img_2.png](images/img_2.png)
 ![img_3.png](images/img_3.png)
 ![img_4.png](images/img_4.png)
-
-```
-
----
