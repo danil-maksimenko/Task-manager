@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title><%= cycle ? "Edit Cycle" : "Create Cycle" %></title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <nav class="navigation">
+      <ul class="navigation__list">
+        <li class="navigation__item">
+          <a href="/board" class="navigation__link">Board</a>
+        </li>
+        <li class="navigation__item">
+          <a href="/cycles" class="navigation__link">Cycles</a>
+        </li>
+        <li class="navigation__item">
+          <a href="/members" class="navigation__link">Members</a>
+        </li>
+
+        <li class="navigation__item navigation__item--right">
+          <a class="navigation__logout-btn" href="/logout">Logout</a>
+        </li>
+      </ul>
+    </nav>
+
+    <main>
+      <div class="form-wrapper">
+        <h1 class="heading"><%= cycle ? "Edit Cycle" : "Create Cycle" %></h1>
+
+        <form method="POST" action="/cycles/save" class="form">
+          <% if (cycle) { %>
+          <input type="hidden" name="id" value="<%= cycle._id %>" />
+          <% } %>
+
+          <div class="form__group">
+            <label class="form__label" for="label">Label</label>
+            <input
+              class="form__input"
+              id="label"
+              name="label"
+              value="<%= cycle?.label || '' %>"
+              required
+              minlength="2"
+              maxlength="50"
+              placeholder="Enter label name"
+            />
+          </div>
+
+          <div class="form__group">
+            <label class="form__label" for="begins">Begins</label>
+            <input
+              class="form__input"
+              id="begins"
+              type="date"
+              name="begins"
+              value="<%= cycle?.begins?.toISOString().split('T')[0] || '' %>"
+              required
+            />
+          </div>
+
+          <div class="form__group">
+            <label class="form__label" for="ends">Ends</label>
+            <input
+              class="form__input"
+              id="ends"
+              type="date"
+              name="ends"
+              value="<%= cycle?.ends?.toISOString().split('T')[0] || '' %>"
+              required
+            />
+          </div>
+
+          <button type="submit" class="button">Save</button>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>

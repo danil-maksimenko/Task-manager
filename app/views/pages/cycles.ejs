@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Cycles</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <nav class="navigation">
+      <ul class="navigation__list">
+        <li class="navigation__item">
+          <a href="/board" class="navigation__link">Board</a>
+        </li>
+        <li class="navigation__item">
+          <a href="/cycles" class="navigation__link">Cycles</a>
+        </li>
+        <li class="navigation__item">
+          <a href="/members" class="navigation__link">Members</a>
+        </li>
+
+        <li class="navigation__item navigation__item--right">
+          <a class="navigation__logout-btn" href="/logout">Logout</a>
+        </li>
+      </ul>
+    </nav>
+
+    <main>
+      <h1 class="heading">Cycles</h1>
+      <a href="/cycles/new" class="button">Create Cycle</a>
+
+      <% if (cycles.length > 0) { %>
+      <ul class="list">
+        <% cycles.forEach(c => { %>
+        <li class="list__item cycle-item">
+          <div class="cycle-item__info">
+            <strong><%= c.label %></strong>
+            (<%= c.begins.toDateString() %> - <%= c.ends.toDateString() %>)
+          </div>
+
+          <div class="cycle-item__actions button-group">
+            <form method="GET" action="/cycles/<%= c._id %>/edit">
+              <button type="submit" class="button button--small">Edit</button>
+            </form>
+            <form method="POST" action="/cycles/<%= c._id %>/delete">
+              <button type="submit" class="button button--danger button--small">
+                Delete
+              </button>
+            </form>
+          </div>
+        </li>
+        <% }) %>
+      </ul>
+      <% } else { %>
+      <p>No cycles available.</p>
+      <% } %>
+    </main>
+  </body>
+</html>

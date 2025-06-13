@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= person ? "Edit Member" : "Add Member" %></title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <nav class="navigation">
+      <ul class="navigation__list">
+        <li class="navigation__item">
+          <a href="/board" class="navigation__link">Board</a>
+        </li>
+        <li class="navigation__item">
+          <a href="/cycles" class="navigation__link">Cycles</a>
+        </li>
+        <li class="navigation__item">
+          <a href="/members" class="navigation__link">Members</a>
+        </li>
+
+        <li class="navigation__item navigation__item--right">
+          <a class="navigation__logout-btn" href="/logout">Logout</a>
+        </li>
+      </ul>
+    </nav>
+
+    <main>
+      <div class="form-wrapper">
+        <h1 class="heading"><%= person ? "Edit Member" : "Add Member" %></h1>
+
+        <form action="/members/save" method="POST" class="form">
+          <% if (person) { %>
+          <input type="hidden" name="id" value="<%= person._id %>" />
+          <% } %>
+
+          <div class="form__group">
+            <label class="form__label" for="displayName">Name</label>
+            <input
+              class="form__input"
+              id="displayName"
+              name="displayName"
+              value="<%= person?.displayName || '' %>"
+              required
+              minlength="2"
+              maxlength="50"
+              placeholder="Enter full name"
+            />
+          </div>
+
+          <div class="form__group">
+            <label class="form__label" for="position">Position</label>
+            <input
+              class="form__input"
+              id="position"
+              name="position"
+              value="<%= person?.position || '' %>"
+              required
+              minlength="3"
+              maxlength="30"
+              placeholder="e.g. Developer"
+            />
+          </div>
+
+          <button type="submit" class="button">Save</button>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title><%= item ? "Edit Task" : "Create Task" %></title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <nav class="navigation">
+      <ul class="navigation__list">
+        <li class="navigation__item">
+          <a href="/board" class="navigation__link">Board</a>
+        </li>
+        <li class="navigation__item">
+          <a href="/cycles" class="navigation__link">Cycles</a>
+        </li>
+        <li class="navigation__item">
+          <a href="/members" class="navigation__link">Members</a>
+        </li>
+
+        <li class="navigation__item navigation__item--right">
+          <a class="navigation__logout-btn" href="/logout">Logout</a>
+        </li>
+      </ul>
+    </nav>
+
+    <main>
+      <div class="form-wrapper">
+        <h1 class="heading"><%= item ? "Edit Task" : "Create Task" %></h1>
+
+        <form method="POST" action="/board/save" class="form">
+          <% if (item) { %>
+            <input type="hidden" name="id" value="<%= item._id %>" />
+          <% } %>
+
+          <div class="form__group">
+            <label class="form__label" for="title">Title</label>
+            <input 
+              class="form__input" 
+              id="title" 
+              name="title" 
+              value="<%= item?.title || '' %>" 
+              required
+              minlength="2"
+              maxlength="50"
+              placeholder="Enter title name"
+              />
+          </div>
+
+          <div class="form__group">
+            <label class="form__label" for="note">Note</label>
+            <textarea 
+              class="form__input" 
+              id="note" 
+              name="note" 
+              required
+              minlength="2"
+              maxlength="500"
+              placeholder="Enter notes"
+            ><%= item?.note || '' %></textarea>
+          </div>
+
+          <div class="form__group">
+            <label class="form__label" for="stage">Status</label>
+            <select class="form__input" id="stage" name="stage">
+              <option <%= item?.stage === 'Pending' ? 'selected' : '' %>>Pending</option>
+              <option <%= item?.stage === 'Ongoing' ? 'selected' : '' %>>Ongoing</option>
+              <option <%= item?.stage === 'Completed' ? 'selected' : '' %>>Completed</option>
+            </select>
+          </div>
+
+          <div class="form__group">
+            <label class="form__label" for="assignedTo">Assignee</label>
+            <select class="form__input" id="assignedTo" name="assignedTo">
+              <% members.forEach(m => { %>
+                <option value="<%= m._id %>" <%= item?.assignedTo == m._id ? "selected" : "" %>><%= m.displayName %></option>
+              <% }) %>
+            </select>
+          </div>
+
+          <div class="form__group">
+            <label class="form__label" for="relatedCycle">Cycle</label>
+            <select class="form__input" id="relatedCycle" name="relatedCycle">
+              <% cycles.forEach(c => { %>
+                <option value="<%= c._id %>" <%= item?.relatedCycle == c._id ? "selected" : "" %>><%= c.label %></option>
+              <% }) %>
+            </select>
+          </div>
+
+          <button type="submit" class="button">Save</button>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>

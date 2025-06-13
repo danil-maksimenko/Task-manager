@@ -1,0 +1,65 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Task Board</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <nav class="navigation">
+      <ul class="navigation__list">
+        <li class="navigation__item">
+          <a href="/board" class="navigation__link">Board</a>
+        </li>
+        <li class="navigation__item">
+          <a href="/cycles" class="navigation__link">Cycles</a>
+        </li>
+        <li class="navigation__item">
+          <a href="/members" class="navigation__link">Members</a>
+        </li>
+
+        <li class="navigation__item navigation__item--right">
+          <a class="navigation__logout-btn" href="/logout">Logout</a>
+        </li>
+      </ul>
+    </nav>
+
+    <main>
+      <h1 class="heading">Task Board</h1>
+
+      <a href="/board/new" class="button">Create New Task</a>
+
+      <% if (items.length > 0) { %>
+      <ul class="task-list">
+        <% for (let i = 0; i < items.length; i++) { const item = items[i]; %>
+        <li class="task task-item">
+          <div class="task-item__content">
+            <strong><%= item.title %></strong> - <%= item.stage %><br />
+            <% if (item.note) { %>
+            <p><%= item.note %></p>
+            <% } %>
+            <small
+              >Assigned to: <%= item.assignedTo?.displayName || 'N/A' %></small
+            ><br />
+            <small>Cycle: <%= item.relatedCycle?.label || 'N/A' %></small>
+          </div>
+
+          <div class="task-item__actions button-group">
+            <form method="GET" action="/board/<%= item._id %>/edit">
+              <button type="submit" class="button button--small">Edit</button>
+            </form>
+            <form method="POST" action="/board/<%= item._id %>/delete">
+              <button type="submit" class="button button--danger button--small">
+                Delete
+              </button>
+            </form>
+          </div>
+        </li>
+
+        <% } %>
+      </ul>
+      <% } else { %>
+      <p>No tasks available.</p>
+      <% } %>
+    </main>
+  </body>
+</html>

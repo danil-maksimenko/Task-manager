@@ -1,0 +1,26 @@
+{
+  "name": "task-manager_danylo_55658",
+  "version": "1.0.0",
+  "description": "A simple task manager application built with Electron and Express",
+  "author": "Danylo Maksymenko",
+  "license": "MIT",
+  "main": "main.js",
+  "dependencies": {
+    "dotenv": "^16.5.0",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "mongoose": "^8.15.2"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "cross-env": "^7.0.3",
+    "electron": "^30.0.0",
+    "nodemon": "^3.1.0",
+    "wait-on": "^8.0.3"
+  },
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development nodemon server.js",
+    "start": "node server.js",
+    "electron:local": "concurrently \"npm run dev\" \"wait-on http://localhost:3000 && electron .\""
+  }
+}
