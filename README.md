@@ -1,4 +1,4 @@
-# README – Task Manager (Node + Express 5 + MongoDB + Electron)
+# Task Manager (Node + Express 5 + MongoDB + Electron)
 
 > **Język projektu / dokumentacji:** PL  
 > **Autor:** Danylo Maksymenko  
