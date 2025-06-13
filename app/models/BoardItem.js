@@ -1,4 +1,3 @@
-// app/models/BoardItem.js
 const mongoose = require("mongoose");
 
 const boardItemSchema = new mongoose.Schema({

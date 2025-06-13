@@ -1,4 +1,3 @@
-// app/models/Cycle.js
 const mongoose = require("mongoose");
 
 const cycleSchema = new mongoose.Schema({

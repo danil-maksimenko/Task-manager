@@ -12,18 +12,14 @@ const killRoutes = require("./app/routes/kill.routes");
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// ✅ Connect to MongoDB
 connectToDatabase();
 
-// ✅ Set view engine
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "app/views"));
 
-// ✅ Middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
 
-// ✅ Routes
 app.use("/", indexRoutes);
 app.use("/board", taskRoutes);
 app.use("/cycles", cycleRoutes);
@@ -31,7 +27,6 @@ app.use("/members", memberRoutes);
 app.use("/logout", logoutRoutes);
 app.use("/kill", killRoutes);
 
-// ✅ 404 Page
 app.use((req, res) => {
   res.status(404).render("pages/404", {
     title: "Page Not Found",
@@ -39,7 +34,6 @@ app.use((req, res) => {
   });
 });
 
-// ✅ Global Error Handler
 app.use((err, req, res, next) => {
   console.error("❌ SERVER ERROR:", err.stack);
   res.status(500).render("pages/500", {
@@ -48,7 +42,6 @@ app.use((err, req, res, next) => {
   });
 });
 
-// ✅ Start server
 app.listen(PORT, () => {
   console.log(`Server is running at http://localhost:${PORT}`);
 });

@@ -1,8 +1,7 @@
-// config/database.js
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 
-dotenv.config(); // загрузка переменных из .env
+dotenv.config();
 
 const DB_URI = process.env.DB_URI;
 

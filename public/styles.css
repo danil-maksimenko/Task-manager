@@ -1,4 +1,3 @@
-/* Base Reset */
 * {
   margin: 0;
   padding: 0;
@@ -13,7 +12,6 @@ body {
   min-height: 100vh;
 }
 
-/* Headings */
 .heading {
   font-size: 2.2rem;
   margin-bottom: 1rem;
@@ -21,7 +19,6 @@ body {
   font-weight: 700;
 }
 
-/* Message Paragraphs */
 .message {
   margin-bottom: 1.5rem;
   font-size: 1.05rem;
@@ -50,7 +47,7 @@ body {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  min-width: 160px; /* ✅ фиксируем минимальную ширину */
+  min-width: 160px;
   padding: 0.6rem 1.2rem;
   font-size: 0.95rem;
   font-weight: 600;
@@ -83,12 +80,10 @@ body {
   transform: translateY(-2px);
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
 }
-/* Маленькая кнопка */
 .button--small {
   font-size: 0.85rem;
   padding: 0.4rem 0.9rem;
 }
-/* Button Group */
 .button-group {
   display: flex;
   align-items: center;
@@ -96,7 +91,6 @@ body {
   margin-top: 0.5rem;
 }
 
-/* Form */
 .form {
   max-width: 600px;
   background-color: #fff;
@@ -105,7 +99,7 @@ body {
 
 .form-wrapper {
   max-width: 600px;
-  margin: 3rem auto; /* центруем по горизонтали и отступ сверху/снизу */
+  margin: 3rem auto;
   background: #fff;
   padding: 2rem;
   border-radius: 12px;
@@ -144,10 +138,9 @@ body {
 }
 
 textarea.form__input {
-  resize: vertical; /* ❗️Ограничиваем изменение размера только по вертикали */
+  resize: vertical;
 }
 
-/* List */
 .list {
   list-style: none;
   margin-top: 1.5rem;
@@ -167,7 +160,6 @@ textarea.form__input {
   transform: translateY(-2px);
 }
 
-/* Task Board List */
 .task-list {
   list-style: none;
   margin-top: 2rem;
@@ -208,17 +200,15 @@ textarea.form__input {
   gap: 0.5rem;
 }
 
-/* Main Section */
 main {
   padding: 2rem;
 }
 
-/* Navigation */
 .navigation {
   background: #ffffff;
   padding: 1rem 2rem;
   text-align: center;
-  box-shadow: 0 4px 6px -2px rgba(0, 0, 0, 0.1); /* ⬇ только вниз */
+  box-shadow: 0 4px 6px -2px rgba(0, 0, 0, 0.1);
   border-bottom: 1px solid #f0f0f0;
 }
 

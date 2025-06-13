@@ -1,4 +1,3 @@
-// app/models/Member.js
 const mongoose = require("mongoose");
 
 const memberSchema = new mongoose.Schema({

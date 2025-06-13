@@ -1,4 +1,3 @@
-// main.js
 const { app, BrowserWindow } = require("electron");
 const path = require("path");
 const { exec } = require("child_process");
@@ -16,7 +15,6 @@ function createWindow() {
 }
 
 app.whenReady().then(() => {
-  // Запустить Express-сервер в отдельном процессе
   exec("node server.js", (err, stdout, stderr) => {
     if (err) {
       console.error("Failed to start server:", err);

@@ -1,4 +1,3 @@
-// app/services/member.service.js
 const Member = require("../models/Member");
 
 module.exports = {

@@ -1,4 +1,3 @@
-// app/services/cycle.service.js
 const Cycle = require("../models/Cycle");
 
 module.exports = {

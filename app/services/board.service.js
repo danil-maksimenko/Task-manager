@@ -1,4 +1,3 @@
-// app/services/board.service.js
 const BoardItem = require("../models/BoardItem");
 
 module.exports = {
