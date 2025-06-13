@@ -145,9 +145,11 @@ db.cycles.insertOne({ name: "Cycle Q3", begins: ISODate("2025-07-01"), ends: ISO
 ## 10 • Zrzuty ekranu / mock-ups
 
 ```
-docs/img/dashboard.png
-docs/img/cycle_form.png
-docs/img/kanban.png
+![img_1.png](images/img_1.png)
+![img_2.png](images/img_2.png)
+![img_3.png](images/img_3.png)
+![img_4.png](images/img_4.png)
+
 ```
 
 ---
