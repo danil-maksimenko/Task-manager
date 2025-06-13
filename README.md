@@ -130,17 +130,8 @@ Browser / Electron ↔ Express Router ↔ Controller ↔ Service ↔ Mongoose �
 
 ---
 
-## 9 • Typowe komendy MongoShell (dev)
 
-```mongodb
-use task_manager_db
-db.boarditems.find({ status: "done" })
-db.cycles.insertOne({ name: "Cycle Q3", begins: ISODate("2025-07-01"), ends: ISODate("2025-09-30") })
-```
-
----
-
-## 10 • Zrzuty ekranu / mock-ups
+## 9 • Zrzuty ekranu / mock-ups
 
 ```
 docs/img/dashboard.png
