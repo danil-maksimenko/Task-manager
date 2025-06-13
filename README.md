@@ -23,7 +23,6 @@ Aplikacja działa:
 | **Zadania (Board Items)** | • tworzenie / edycja / usuwanie<br>• status → _todo_ / _in-progress_ / _done_<br>• przypisywanie do członka<br>• przypięcie do cyklu |
 | **Cykle (Cycles)**        | • definiowanie zakresu dat<br>• edycja nazw i dat<br>• przenoszenie zadań między cyklami                                             |
 | **Członkowie (Members)**  | • dodawanie, edycja, usuwanie<br>• rola lub specjalizacja (tekstowa)                                                                 |
-| **Widok tablicy**         | • kolumny Kanban (drag-&-drop w planach)<br>• filtry po cyklu / osobie                                                               |                                                                                      |
 | **Desktop (Electron)**    | • uruchamia serwer Node w tle<br>• automatyczne otwarcie okna po starcie                                                             |
 
 ---
