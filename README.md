@@ -50,7 +50,9 @@ cd Task-manager
 npm install                      # prod + dev
 
 # 2. Konfiguracja środowiska
-cp .env.example .env             # wypełnij URI_MONGODB, PORT itp.
+stwórz plik `.env` ręcznie w katalogu głównym i wpisz dane konfiguracyjne:
+
+DB_URI=mongodb+srv://<username>:<password>@cluster0.9mpreoz.mongodb.net/taskboard-nextgen?retryWrites=true&w=majority
 
 # 3. Uruchom serwer z autoreloadem
 npm run dev                      # http://localhost:3000
@@ -73,9 +75,7 @@ npm run electron:local           # odpali API + okno Electron
 
 ```dotenv
 # przykładowa konfiguracja
-PORT=3000
-URI_MONGODB=mongodb://localhost:27017/task_manager_db
-# TOKEN_SHUTDOWN opcjonalnie, jeśli blokujesz /kill
+DB_URI=mongodb+srv://<username>:<password>@cluster0.9mpreoz.mongodb.net/taskboard-nextgen?retryWrites=true&w=majority
 ```
 
 ---
